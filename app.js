@@ -6,8 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Replace '<your-mongodb-connection-url>' with your actual MongoDB connection URL
-const mongoURI =  'mongodb+srv://zouhair:cx3pg8x7WTr4hpv1@vercel.g5po7yn.mongodb.net/?retryWrites=true&w=majority';
-';
+const mongoURI = 'mongodb+srv://zouhair:cx3pg8x7WTr4hpv1@vercel.g5po7yn.mongodb.net/?retryWrites=true&w=majority';
 const client = new MongoClient(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
