@@ -6,7 +6,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Replace '<your-mongodb-connection-url>' with your actual MongoDB connection URL
-const mongoURI = '<your-mongodb-connection-url>';
+const mongoURI =  'mongodb+srv://zouhair:cx3pg8x7WTr4hpv1@vercel.g5po7yn.mongodb.net/?retryWrites=true&w=majority';
+';
 const client = new MongoClient(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
@@ -16,8 +17,8 @@ app.get('/', (req, res) => {
 app.post('/submit', async (req, res) => {
   try {
     await client.connect();
-    const database = client.db('<your-database-name>');
-    const collection = database.collection('<your-collection-name>');
+    const database = client.db('vercel');
+    const collection = database.collection('data');
 
     const { name, age, address, message } = req.body;
     const formData = { name, age, address, message };
